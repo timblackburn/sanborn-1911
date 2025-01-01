@@ -11,8 +11,8 @@
     #sliders{ position: absolute; padding:10px; top: 10px; right: 10px; z-index: 5;  background: rgba(225, 225, 225, .8)}
     body {
      font-family: Arial, sans-serif; /* Choose a font like Arial, with a fallback to a generic sans-serif font if not available */
-     font-size: 12px; /* Set the text size */
-     line-height: .7; /* Adjust line spacing  */
+     font-size: 14px; /* Set the text size */
+     line-height: 1.5; /* Adjust line spacing  */
    }
     label {
      width: 50px;
@@ -26,9 +26,9 @@
 <body>
   <div id="sliders">
     <label>Current:</label><input id="slider1" type="range" min="0" max="1" step="0.1" value="1" oninput="osm.setOpacity(this.value)"><br/>
-    <label>1911:</label><input id="slider2" type="range" min="0" max="1" step="0.1" value="1" oninput="sanborn1910.setOpacity(this.value)"><br/>
+    <label>1911:</label><input id="slider2" type="range" min="0" max="1" step="0.1" value="1" oninput="sanborn1911.setOpacity(this.value)"><br/>
     <label>1950:</label><input id="slider3" type="range" min="0" max="1" step="0.1" value="1" oninput="sanborn1950.setOpacity(this.value)">
-    <label>Main:</label><input id="slider4" type="range" min="0" max="1" step="0.1" value="1" oninput="sanborn1950.setOpacity(this.value)">
+    <!--<label>Main:</label><input id="slider4" type="range" min="0" max="1" step="0.1" value="1" oninput="sanborn1950.setOpacity(this.value)">-->
   </div>
   <div id="map"></div>
   <script>
@@ -40,7 +40,7 @@
 
     var sanborn1950 = L.tileLayer('https://timblackburn.github.io/sanborn-1950/{z}/{x}/{y}.png', {minZoom: 12, maxZoom: 20, tms: false, attribution: 'Created by QGIS'}).addTo(map);
 
-    var sanborn1910 = L.tileLayer('file:////Users/timblackburn/git/sanborn-1910/{z}/{x}/{y}.png', {minZoom: 12, maxZoom: 20, tms: false, attribution: 'Created by QGIS'}).addTo(map);
+    var sanborn1911 = L.tileLayer('https://timblackburn.github.io/sanborn-1911/{z}/{x}/{y}.png', {minZoom: 12, maxZoom: 20, tms: false, attribution: 'Created by QGIS'}).addTo(map);
 
 </script>
 </body>
